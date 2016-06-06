@@ -3,7 +3,10 @@ Set member card requests to be added to a database table in MyTCG instead of bei
 
 ## Features
 - Instead of sending an email for each member card request, MyTCG will add to `$table_mcs` the new requests.
-- You can choose to send the member their member card and delete their request by selecting "complete".
+- You can choose to send the member their member card, update their profile, and delete their request by selecting "send".
+
+### Caution
+- If you choose "delete", you will **not** update the member's profile.
 
 ## Requirements
 - MyTCG
