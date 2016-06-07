@@ -14,5 +14,24 @@ else {
 		echo "<td><a href=\"delete_mcs.php?id=$row2[id]\">delete</a></td>";
 	}
 	echo "</table>\n";
+} ?><br /><br /><?php
+if (ini_get('allow_url_fopen') == 'v1.0.0') {
+	$installed32 = file_get_contents('j_mcs.txt');
+	$version3 = file_get_contents('http://static.janepedia.com/versions/mytcg/mc-requests.txt');
+	if ($version3 !== false) {
+		if ($installed3 == $version3) { //version numbers are the same
+			echo "Your MC hack version is up to date.";
+		}
+		else if ($installed3 != $version3) { //version numbers are not the same
+			echo "<p>You are using MC requent hack version ".$installed3.". Please update to <a href=\"https://github.com/gotjane/mc-requests/releases/\">".$version3."</a>.";
+		}
+	}
+	else {
+		// an error happened
+		echo "Could not check for updates. Please make sure you use the latest version of <a href=\"https://github.com/gotjane/mc-requests/releases/\">the MC request hack</a>.";
+	}
+}
+else {
+   echo "Could not check for updates. Please make sure you use the latest version of <a href=\"https://github.com/gotjane/mc-requests/releases\">the MC request hack</a>.";
 }
 include('footer.php'); ?>
