@@ -7,7 +7,6 @@ mysql_select_db("$db_database", $connect);
 $create_mcs = "CREATE TABLE `$table_mcs` (
 	`id` int(20) NOT NULL auto_increment,
 	`member` varchar(255) NOT NULL,
-	`memberid` INT(8) NOT NULL,
 	`image` varchar(500) NOT NULL,
 	`color` varchar(50) NOT NULL,
 	PRIMARY KEY (`id`)
